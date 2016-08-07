@@ -1,6 +1,6 @@
 # Git Definitions
 
-**Instructions: ** Define each of the following Git concepts.
+**Instructions:** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
 Version control is a system that allows you to keep track of files over time.
