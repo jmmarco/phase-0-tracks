@@ -4,26 +4,40 @@
 <head>
     <meta charset="utf-8">
     <title>Table Practice</title>
+    <!-- Add some basic styles to make the tables look better -->
+    <style>
+    td,
+    th {
+        border: 1px solid #999;
+        padding: 0.5rem;
+    }
+    </style>
 </head>
 
 <body>
     <h1>Let's do some Tables!</h1>
     <table>
-    	<tr>
-    		<th>Name</th>
-    		<th>Superpowers</th>
-    		<th>Super Hero Name</th>
-    	</tr>
-    	<tr>
-    		<td>Tony Stark</td>
-    		<td>Super Cool Robot Suit</td>
-    		<td>Iron Man</td>
-    	</tr>
-    	<tr>
-    		<td>Bruce Banner</td>
-    		<td>Mean Green Guy</td>
-    		<td>The Hulk</td>
-    	</tr>
+        <tr>
+            <th>Name</th>
+            <th>Superpowers</th>
+            <th>Super Hero Name</th>
+        </tr>
+        <tr>
+            <td>Tony Stark</td>
+            <td>Super Cool Robot Suit</td>
+            <td>Iron Man</td>
+        </tr>
+        <tr>
+            <!-- The Hulk gets two rows because he's a big guy -->
+            <td rowspan="2">Bruce Banner</td>
+            <!-- The Hulk gets two columns because he's a big guy -->
+            <td colspan="2">Mean Green Guy</td>
+        </tr>
+        <!-- This table row belongs to the Hulk because we made the previous <td> element in span 2 rows -->
+        <tr>
+            <td>Ultra Strength</td>
+            <td>The Hulk</td>
+        </tr>
     </table>
 </body>
 
