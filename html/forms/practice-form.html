@@ -4,10 +4,43 @@
 <head>
     <meta charset="utf-8">
     <title>Forms!</title>
+    <style>
+    body {
+        font-family: sans-serif;
+    }
+
+    fieldset {
+        border: 2px solid gray;
+        width: 450px;
+    }
+    </style>
 </head>
 
 <body>
-
+    <h1>Hi! Welcome to the future!</h1>
+    <form name="form" action="success.html" method="post">
+        <fieldset>
+            <div>
+                <label for="name">First Name</label>
+                <input type="text" placeholder="Full Name" name="fullname">
+            </div>
+            <h2>Select your Electric Vehicle</h2>
+            <div>
+                <select name="vehicle" id="something">
+                    <option>Tesla Model S</option>
+                    <option>Tesla Model 3</option>
+                    <option>Tesla Roadster</option>
+                    <option>Nissan Leaf</option>
+                    <option>Chevrolet Bolt</option>
+                </select>
+            </div>
+            <br>
+            <textarea name="comments" placeholder="Additional comments" cols="30" rows="10"></textarea>
+            <div>
+                <button type="submit">Place your order</button>
+            </div>
+        </fieldset>
+    </form>
 </body>
 
 </html>
