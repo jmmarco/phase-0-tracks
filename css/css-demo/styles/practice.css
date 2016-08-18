@@ -1,0 +1,53 @@
+#contact-info {
+	font-size: 0.8em;
+}
+
+.job {
+	background-color: #e9e5dc;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 10px 0 10px 0px;
+}
+
+.acommplishments {
+	font-size: 0.8em;
+}
+
+.
+
+/*
+
+1. What does the "Cascading" part of Cascading Style Sheets mean?
+When there is a conflict between two CSS rules that select the same element, how does your browser decide which rule to use?
+
+Cascading is the order of styles applied in precedence to any conflict.
+i.e:
+
+p { color: red; }
+p { color: blue; }
+
+Two selectors that contain the same properties and values then the last selector will be the chosen one.
+
+2. Find a cheat sheet or quick guide on CSS selectors, or refer to a cheat sheet you've already bookmarked.
+What is a pseudoselector? Write a CSS rule that uses a pseudoselector.
+
+https://css-tricks.com/pseudo-class-selectors/
+
+a:hover {
+	color: red;
+}
+
+
+3. How can you use CSS to select the child element of another element (for instance, a section inside another section, or an
+li inside a ul but not inside an ol)? Add an example of such a rule in your CSS.
+
+section ul {
+  color: red
+}
+
+Find the Fiddle: https://jsfiddle.net/jmmarco/2unpykqm/;
+
+3.2 Mandatory Pairing: Link Tags and Selectors completed with Juan Carlos Field and Juan Martin Marco
+
+
+*/
