@@ -8,3 +8,15 @@ img {
 img:last-child {
 	margin-top: 50px;
 }
+
+img:first-child {
+	position: relative;
+	top: 190px;
+	left: 12px;
+}
+
+img:nth-of-type(even) {
+	position: relative;
+	top: 207px;
+	left: 5px;
+}
