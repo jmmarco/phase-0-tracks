@@ -3,3 +3,8 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Put a little bit of space above its head. */
+img:last-child {
+	margin-top: 50px;
+}
