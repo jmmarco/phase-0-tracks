@@ -17,3 +17,33 @@ Elevator pseudocode:
 
 	- If no response is heard
 		- Repeat initial voice command: "Ready, which floor would you like to go"
+
+
+Release 1: Find a Real-Life Algorithm
+You're a smart human, not a dumb computer. That means you likely follow algorithms on a daily basis without even knowing it, taking your astonishing abilities completely for granted.
+
+Real-Life Algorithm pseudocode (coffee maker):
+
+- Check if it's a work week [Monday, Tuesday, Wednesday, Thursday Friday]
+	- If (true)
+		- Wait until it's 7:00AM
+		- Alert the user by issuing the following voice command: "Good morning Master, how about some coffee to begin the day"
+		- If coffee maker is ready (beans are loaded and water tank is full):
+			- Brew Coffee until water has depleted
+			- Issue voice command: "Coffee is ready!"
+		- Else
+			- Until water and coffee levels are OK, or three voice commands were given:
+				- Issue voice command: "Please check coffee machine water level and coffee beans"
+			- If no response was heard:
+				- Shut-off coffee machine
+	- Else
+		- Wait until its 10:00AM
+		- Alert the user by issuing the following voice command: "Good morning master, here's some coffee to relax and enjoy"
+		- If coffee maker is ready (beans are loaded and water tank is full):
+			- Brew Coffee until water has depleted
+			- Issue voice command: "Coffee is ready!"
+		- Else
+			- Until water and coffee levels are OK, or three voice commands were given:
+				- Issue voice command: "Please check coffee machine water level and coffee beans"
+			- If no response was heard:
+				- Shut-off coffee machine
