@@ -1,0 +1,19 @@
+Release 0: Equip Your New Robot
+It's the year 2030, and you've finally acquired a Personal Robot to do your bidding. Huzzah!
+
+Unfortunately, your robot doesn't know how to use an elevator.
+
+Elevator pseudocode:
+
+- Scan elevator keypad to figure out how many floors there are and store them.
+- Alert the user by issuing a voice command: "Ready, which floor would you like to go?":
+	- Until a response is heard
+		If response is valid floor number:
+			- Issue voice command: "Sure thing Boss!"
+			- Press button for target floor
+		Else
+		 	- Issue voice command: "Sorry, that floor doesn't exist"
+		 	- Issue voice command: "Valid floors for this building are [1,2,3...]"
+
+	- If no response is heard
+		- Repeat initial voice command: "Ready, which floor would you like to go"
