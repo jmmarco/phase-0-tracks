@@ -1,7 +1,17 @@
+body {
+    font-family: helvetica;
+}
+
 header {
     background-color: blue;
     font-size: 20px;
     border-radius: 10px;
+}
+
+footer {
+    background-color: teal;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 .column-1 {
@@ -16,14 +26,4 @@ header {
     display: inline-block;
     vertical-align: top;
     width: 49%;
-}
-
-body {
-    font-family: helvetica;
-}
-
-footer {
-    background-color: teal;
-    border-radius: 10px;
-    margin: 5px;
 }
