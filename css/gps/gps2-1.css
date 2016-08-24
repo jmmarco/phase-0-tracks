@@ -1,0 +1,29 @@
+body {
+    font-family: helvetica;
+}
+
+header {
+    background-color: blue;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: teal;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.column-1 {
+    background-color: red;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.column-2 {
+    background-color: yellow;
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+}
