@@ -15,7 +15,14 @@ end
 
 
 puts "Enter the estimated age for the hamster"
-age = gets.to_i
+age = gets.chomp
 if age == ""
 	age =  nil
 end
+
+
+puts "Ok, please check if all fields are correct"
+puts "Hamsters name: #{name}"
+puts "Hamsters volume level #{volume}"
+puts "Good canidate: #{adoption}"
+puts "Hamsters age is: #{age}"
