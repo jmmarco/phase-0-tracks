@@ -1,3 +1,7 @@
+# Students:
+# Jason Buss
+# Juan Marco
+
 puts "What's the hamsters name?"
 name = gets.chomp
 
