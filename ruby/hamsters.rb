@@ -5,10 +5,17 @@ puts "What is the hamsters volume level?"
 volume = gets.to_i
 
 puts "Is the hamster a good candidate for adoption? (Y/N)"
-adoption = gets.chomp
+adoption = gets.chomp.downcase
+if adoption == "y"
+	adoption = true
+elsif adoption == "n"
+	adoption = false
+end
+# Consider using a loop construct to improve UX
+
 
 puts "Enter the estimated age for the hamster"
-age = gets.chomp
+age = gets.to_i
 if age == ""
 	age =  nil
 end
