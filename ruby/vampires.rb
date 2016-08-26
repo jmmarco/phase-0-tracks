@@ -18,25 +18,31 @@ garlic_bread = gets.chomp.capitalize
 puts "Would you like to enroll in the company's health insurance?"
 insurance = gets.chomp.capitalize
 
+# Calculate real age
+real_age = current_year - year_of_birth
+
+
 # Detection Logic
-if (current_year - year_of_birth) == age && garlic_bread == "Y"
-	puts "Probably not a vampire."
+if real_age == age && garlic_bread == "Y"
+	result = "Probably not a vampire."
 elsif (current_year - year_of_birth) != age && garlic_bread == "N"
-	puts "Probably a vampire."
+	result = "Probably a vampire."
 elsif (current_year - year_of_birth) != age && garlic_bread == "N" && insurance == "N"
-	puts "Almost certainly a vampire."
+	result = "Almost certainly a vampire."
 elsif name == "Drake Cula" || name == "Tu Fang"
-	puts "Definitely a vampire."
+	result = "Definitely a vampire."
 else
-	puts "Results inconclusive."
+	result = "Results inconclusive."
 end
 
-# Print the results
-puts "Here's the survey info:"
+# Print the survey:
+puts "-- Here's the survey info --"
 puts "Candidate name: #{name}"
-puts "Current age #{age}"
+puts "Age provided: #{age}"
+puts "Real age: #{real_age}"
 puts "Year of birth: #{year_of_birth}"
 puts "Garlic bread: #{garlic_bread}"
 puts "Health insurance: #{insurance}"
+puts "Final result: #{result}"
 
 
