@@ -1,4 +1,4 @@
-# Include the necessary library we can get the actual date
+# Include the necessary library so we can get the actual date
 require 'date'
 # Store the year in a variable and make it an integer
 current_year = Date.today.strftime("%Y").to_i
