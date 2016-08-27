@@ -39,17 +39,34 @@ while employees > 0
     result = "Results inconclusive."
   end
 
-  # Print the survey:
-  puts "-- Here's the survey info for the current employee --"
-  puts "Candidate name: #{name}"
-  puts "Age provided: #{age}"
-  puts "Real age: #{real_age}"
-  puts "Year of birth: #{year_of_birth}"
-  puts "Garlic bread: #{garlic_bread}"
-  puts "Health insurance: #{insurance}"
-  puts "Final result: #{result}"
-  print "\n" * 2
+  # Check for allergies
+  puts "Please enter any allergies you may have:"
+  puts "Enter 'done' when finished."
+  allergy = ""
+  allergies = Array.new
 
-  employees -= 1
+  while allergy != "done"
+    allergy = gets.chomp
 
+    if allergy != "done" && allergy != "sunshine"
+      allergies << allergy
+    elsif allergy == "sunshine"
+      puts "Probably a vampire."
+      employees -= 1
+      break
+    else
+      # Print the survey:
+      puts "-- Here's the survey info for the current employee --"
+      puts "Candidate name: #{name}"
+      puts "Age provided: #{age}"
+      puts "Real age: #{real_age}"
+      puts "Year of birth: #{year_of_birth}"
+      puts "Garlic bread: #{garlic_bread}"
+      puts "Health insurance: #{insurance}"
+      puts "Allergies: #{allergies}"
+      puts "Final result: #{result}"
+      print "\n" * 2
+      employees -= 1
+    end
+  end
 end
