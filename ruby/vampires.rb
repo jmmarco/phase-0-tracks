@@ -70,3 +70,6 @@ while employees > 0
     end
   end
 end
+
+# Plot twist
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
