@@ -7,6 +7,7 @@ def encrypt(word)
   index = 0
   result = ""
   while index < word.length
+  	# For each letter go forward one character
     result += word[index].next
     index += 1
   end
@@ -18,18 +19,25 @@ end
 
 def decrypt(word)
   index = 0
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
   result = ""
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  # Make the word and array
+  word = word.split("")
+  # Check if letter is in the alphabet
   while index < alphabet.length
-    if word[index] == "a"
-      result += "z"
-    elsif word[index] == "z"
-      result += "a"
-    elsif word[index] == alphabet[index]
-      result += alphabet[index - 1]
-    end
-    p "word[index] is:#{word[index]}, and alphabet[index] is: #{alphabet[index]}"
-    index += 1
+  	for letter in word do
+  		# Edgecase #1
+  		if letter == "a"
+  			result += "z"
+  		# Edgecase #2
+  		elsif letter == "z"
+  			result += "a"
+  		# For each match go back one character
+  		elsif letter == alphabet[index]
+  			result += alphabet[index - 1]
+  		end
+  	end
+  	index += 1
   end
   p result
 end
