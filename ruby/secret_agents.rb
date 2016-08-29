@@ -65,9 +65,11 @@ user_input = ""
 while user_input = gets.chomp
     case user_input
     when "encrypt"
+        puts "Encryption mode activated"
         encrypt(get_input)
         break
     when "decrypt"
+        "Decryption mode activated"
         decrypt(get_input)
         break
     else
