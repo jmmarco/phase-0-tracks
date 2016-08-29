@@ -58,17 +58,20 @@ def get_input
 end
 
 # Add driver code
+puts "Hello agent, would you like to encrypt or decrypt a password?"
+
 user_input = ""
 
-until user_input == "encrypt" || user_input == "decrypt"
-        puts "Hello agent, would you like to encrypt or decrypt a password?"
-        user_input = gets.chomp
-end
-
-if user_input == "encrypt"
-    encrypt(get_input)
-elsif user_input == "decrypt"
-    decrypt(get_input)
-else
-    puts "Please enter: 'encrypt' or 'decrypt'"
+while user_input = gets.chomp
+    case user_input
+    when "encrypt"
+        encrypt(get_input)
+        break
+    when "decrypt"
+        decrypt(get_input)
+        break
+    else
+        puts "Not a valid option."
+        puts "Please enter: 'encrypt' or 'decrypt' as an option."
+    end
 end
