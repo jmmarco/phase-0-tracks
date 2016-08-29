@@ -18,7 +18,7 @@ def encrypt(word)
     index += 1
     end
     # Print the encrypted word
-    p "Encryption completed, encrypted password is: #{result}"
+    puts "Encryption completed, encrypted password is: #{result}"
 end
 
 # Pseudocode
@@ -47,7 +47,7 @@ def decrypt(word)
         end
     end
     # Print the decrypted word
-    p "Decryption completed, decrypted password is: #{result}"
+    puts "Decryption completed, decrypted password is: #{result}"
 end
 
 
@@ -58,11 +58,17 @@ def get_input
 end
 
 # Add driver code
-puts "Hello agent, would you like to encrypt or decrypt a password?"
-choice = gets.chomp
+user_input = ""
 
-if choice == "encrypt"
+until user_input == "encrypt" || user_input == "decrypt"
+        puts "Hello agent, would you like to encrypt or decrypt a password?"
+        user_input = gets.chomp
+end
+
+if user_input == "encrypt"
     encrypt(get_input)
-elsif choice == "decrypt"
+elsif user_input == "decrypt"
     decrypt(get_input)
+else
+    puts "Please enter: 'encrypt' or 'decrypt'"
 end
