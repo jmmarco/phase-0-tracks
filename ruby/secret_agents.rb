@@ -18,7 +18,7 @@ def encrypt(word)
     index += 1
     end
     # Print the encrypted word
-    p result
+    p "Encryption completed, encrypted password is: #{result}"
 end
 
 # Pseudocode
@@ -47,12 +47,22 @@ def decrypt(word)
         end
     end
     # Print the decrypted word
-    p result
+    p "Decryption completed, decrypted password is: #{result}"
 end
 
-# encrypt("abc") # should return "bcd"
-# encrypt("zed") # should return "afe"
-# decrypt("bcd") # should return "abc"
-# decrypt("afe") # should return "zed"
 
-# decrypt(encrypt("swordfish"))
+# Method to get user input
+def get_input
+    puts "Enter password:"
+    password = gets.chomp
+end
+
+# Add driver code
+puts "Hello agent, would you like to encrypt or decrypt a password?"
+choice = gets.chomp
+
+if choice == "encrypt"
+    encrypt(get_input)
+elsif choice == "decrypt"
+    decrypt(get_input)
+end
