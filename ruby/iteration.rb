@@ -32,3 +32,15 @@ end
 pets.each do |pet, quantity|
 	puts "We have: #{quantity} #{pet}(s)."
 end
+
+
+# Add some helpful output
+
+puts "Before .map!: #{numbers}"
+
+# Iterate through each number and get the next one
+numbers.map! do |num|
+	num.next
+end
+
+puts "After .map! #{numbers}"
