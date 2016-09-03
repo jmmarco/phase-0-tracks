@@ -70,3 +70,13 @@ puts "Before .select #{pets}"
 pets.select! {|pet, quantity| quantity <= 5 } # Select pet(s) that have 5 or less
 puts "After .select #{pets}"
 
+# Method 3:
+
+puts "Before .keep_if: #{numbers}"
+numbers.keep_if {|num| num.even?} # Just keep the even numbers
+puts "After .keep_if: #{numbers}"
+
+puts "Before .keep_if: #{pets}"
+pets.keep_if {|pet| pet == "dog"} # Just keep the dog(s)
+puts "After .keep_if: #{pets}"
+
