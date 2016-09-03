@@ -13,3 +13,7 @@
 "zom".insert(1, "o")
 # => “zoom”
 "develop".insert(-1, "er")
+
+"enhance".center(14)
+# => "    enhance    "
+"emergency".center(18)
