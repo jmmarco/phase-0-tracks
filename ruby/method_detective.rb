@@ -21,3 +21,7 @@
 "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 "tacos are great!".upcase
+
+"the usual".concat(" suspects")
+#=> "the usual suspects"
+"insta".concat("gram")
