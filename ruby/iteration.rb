@@ -44,3 +44,21 @@ numbers.map! do |num|
 end
 
 puts "After .map! #{numbers}"
+
+# Release 2: Use the Documentation
+
+puts "Before .delete_if: #{numbers}"
+
+# Get rid of numbers greater than 50
+numbers.delete_if {|num| num > 50 }
+
+puts "After .delete_if: #{numbers}"
+
+puts "Before .delete_if: #{pets}"
+
+# Get rid of cats(s)
+pets.delete_if {|pet| pet == "cat"}
+
+puts "Before .delete_if: #{pets}"
+
+
