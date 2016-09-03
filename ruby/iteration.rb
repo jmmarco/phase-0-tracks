@@ -15,13 +15,14 @@ favorite_food { |name1, name2| puts "#{name2} likes Spaghetti and #{name1} likes
 # Add Data Structures
 
 # Array of integers
-numbers = [1, 2, 7, 12, 50, 87, 99]
+numbers = [1, 2, 4, 7, 12, 50, 87, 99]
 
 # A hash for pets
 pets = {
 	"cat" => 1,
 	"dog" => 2,
 	"fish" => 7,
+	"wolf" => 1,
 	"tiger" => 3
 }
 
@@ -77,6 +78,11 @@ numbers.keep_if {|num| num.even?} # Just keep the even numbers
 puts "After .keep_if: #{numbers}"
 
 puts "Before .keep_if: #{pets}"
-pets.keep_if {|pet| pet == "dog"} # Just keep the dog(s)
+pets.keep_if {|pet| pet == "dog" } # Just keep the dog(s)
 puts "After .keep_if: #{pets}"
 
+# Method 4
+
+puts "Before .take_while: #{numbers}"
+new_array = numbers.take_while {|num| num < 3} # take only numbers less than 3
+puts "After .take_while: #{new_array}"
