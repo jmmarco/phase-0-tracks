@@ -17,3 +17,7 @@
 "enhance".center(14)
 # => "    enhance    "
 "emergency".center(18)
+
+"Stop! You’re under arrest!".upcase
+# => "STOP! YOU’RE UNDER ARREST!"
+"tacos are great!".upcase
