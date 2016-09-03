@@ -10,13 +10,12 @@ favorite_food { |name1, name2| puts "#{name2} likes Spaghetti and #{name1} likes
 
 # Release 1 - Data Structures
 
-cereal = ["Lucky Charms", "Cap'n Crunch", "Fruty Pebbles", "Honey Combs"]
+numbers = [1, 2, 12, 50, 87, 99]
 
 pets = {
 	# Animal and breed
-	"cat" => "calico",
-	"dog" => "border collie"
-	"dog" => "french bulldog"
+	"cat" => 1,
+	"dog" => 2
 }
 
 
