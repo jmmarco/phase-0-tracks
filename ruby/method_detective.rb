@@ -25,3 +25,7 @@
 "the usual".concat(" suspects")
 #=> "the usual suspects"
 "insta".concat("gram")
+
+" suspects".prepend("the usual")
+# => "the usual suspects"
+" power".prepend("knowledge is")
