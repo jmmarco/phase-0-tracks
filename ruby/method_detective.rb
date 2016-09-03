@@ -29,3 +29,8 @@
 " suspects".prepend("the usual")
 # => "the usual suspects"
 " power".prepend("knowledge is")
+
+"The case of the disappearing last letter".chop
+# => "The case of the disappearing last lette"
+"the last of us".chop
+
