@@ -34,3 +34,6 @@
 # => "The case of the disappearing last lette"
 "the last of us".chop
 
+"The mystery of the missing first letter".reverse.chop.reverse
+# => "he mystery of the missing first letter"
+"The first letter should be missing".reverse.chop.reverse
