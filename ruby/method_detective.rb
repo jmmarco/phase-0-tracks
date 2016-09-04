@@ -42,3 +42,8 @@
 # => "Elementary, my dear Watson!"
 "Now    we're   talking!".gsub(/\s+/, " ").strip
 
+"z".each_byte {|char| p char}
+# => 122
+# (What is the significance of the number 122 in relation to the character z?)
+# Answer: it's the total bytes that make up the character "z".
+"john".each_byte {|char| p char}
