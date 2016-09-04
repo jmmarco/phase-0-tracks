@@ -47,3 +47,9 @@
 # (What is the significance of the number 122 in relation to the character z?)
 # Answer: it's the total bytes that make up the character "z".
 "john".each_byte {|char| p char}
+
+"How many times does the letter 'a' appear in this string?".count("a")
+# => 4
+"The letter 't' appears:".count("t")
+
+
