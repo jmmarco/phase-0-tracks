@@ -39,7 +39,8 @@ loop do
 
     loop do
         puts "Enter another color and press 'enter'. Type 'done' when completed." if client["Colors"].length > 0
-        puts "Enter a color, and press 'enter'. Type 'done' when completed."
+        puts "Enter a single color, and press 'enter'. You can add multiple colors this way."
+        puts "Type 'done' when completed."
         input = gets.chomp
         break if input == "done"
         client["Colors"] << input
@@ -59,7 +60,7 @@ loop do
     input = gets.chomp.downcase
     if input == 'n'
         until input == "done"
-            puts "Ok, What field would you like to change?. Enter 'done' when finished."
+            puts "Ok, What field would you like to change? Enter 'done' when finished."
             input = gets.chomp
             case input
             when "name"
@@ -76,12 +77,13 @@ loop do
                 else
                     client["Children"] = false
                 end
-            when "color"
+            when "colors"
                 # Empty the "Colors" array
                 client["Colors"] = []
                 loop do
                     puts "Enter another color and press 'enter'. Type 'done' when completed." if client["Colors"].length > 0
-                    puts "Enter a color, and press 'enter'. Type 'done' when completed."
+                    puts "Enter a single color, and press 'enter'. You can add multiple colors this way."
+                    puts "Type 'done' when completed."
                     input = gets.chomp
                     break if input == "done"
                     client["Colors"] << input
@@ -89,21 +91,21 @@ loop do
             when "theme"
                 puts "Ok, enter a customer theme:"
                 client["Theme"] = gets.chomp
-            when "payment"
+            when "payment method"
                 puts "Ok, enter the preferred payment method:"
                 client["Payment Method"] = gets.chomp
             end # End of case loop
 
             # Present the updated information
-            puts "Here's the updated customer's details: #{client}"
+            puts "Not a valid option, use a valid key. Tip: Use the hash key as reference."
         end # End of until loop
     else
-        puts "We're done here. Bye!"
+        puts "Thanks for using the cliententerator 2000!"
         break
     end # End of conditional
 
     # Present the client information
-    puts "Here's the customer's you entered details:"
+    puts "Here's the customer record:"
     pp client
     puts "Thanks for using the cliententerator 2000!"
 end # Main program loop
