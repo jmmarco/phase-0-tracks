@@ -6,6 +6,10 @@
 # Present the client's information
 # Print out an exit message
 
+# Add pretty print library to print hashes in a nice way
+require 'pp'
+
+puts "Welcome to the customer database!"
 
 # initialize an empty input variable and a hash to store customer
 input = ""
@@ -49,6 +53,7 @@ loop do
     client["Payment Method"] = gets.chomp
 
     # Present the client information
-    puts "Here's the customer's you entered details: #{client}"
+    puts "Here's the customer's you entered details:"
+    pp client
     puts "Thanks for using the cliententerator 2000!"
 end # Main program loop
