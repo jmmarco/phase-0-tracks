@@ -54,3 +54,8 @@ class Tiger
 		puts "*Roars out load*"
 	end
 end
+
+# Create an array to store all the tigers
+tigers = []
+50.times {tigers << Tiger.new}
+puts "We have #{tigers.length} tigers!"
