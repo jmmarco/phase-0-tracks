@@ -3,6 +3,7 @@ class Puppy
     def initialize
         puts "Initializing new puppy instance ..."
     end
+
     # Fetch
     def fetch(toy)
         puts "I brought back the #{toy}!"
@@ -37,3 +38,19 @@ max.speak(4)
 max.roll_over
 puts "Max is: #{max.dog_years(2)} years old!"
 max.paw
+
+# Define a new class!
+
+class Tiger
+	def initialize
+		puts "Initializing Tiger class..."
+	end
+
+	def jump
+		puts "*Jumping in the air*"
+	end
+
+	def roar
+		puts "*Roars out load*"
+	end
+end
