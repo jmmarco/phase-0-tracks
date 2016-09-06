@@ -1,48 +1,87 @@
 # Grab an agent's name, split it into two words
+# Note tor reviewer: Felicia Torres should return "Vussit Gimodoe" according to the DBC
+# However the next consonant after the letter "t" is "u" not "v"
+# So the final output for "Felicia Torres" is actually: "Uussit Gimodoe"
+
+def get_name
+
+	# Get the name from the user and make sure it's OK
+	input = ""
+    until input == "done" do
+        puts "Please enter a name:"
+        name = gets.chomp
+        puts "The name entered is #{name}"
+        puts "is that right? Enter 'done' if satisfied"
+        input = gets.chomp.downcase
+    end
+
+    # Split the name into words
+    name = name.split(" ")
+    result = []
+
+    # If the name has more than one word
+    # Run the generator for each word
+    if name.length > 1
+        name.each do |piece|
+            result << alias_generator(piece)
+        end
+   	# Run the generator on the single word
+    else
+        result << alias_generator(name[0])
+    end
+
+    # Reverse (swap) the array
+    result = result.reverse
+
+    # Make the array a single string
+    result = result.join(" ")
+
+    # Output to the user
+    puts "Program complete! Here's your new name: #{result}"
+end
+
 
 def get_next_vowel(vowel)
-	vowels = ["a", "e", "i", "o", "u"]
-	i = 0
-	while i < vowels.length
-		if vowel == 'u'
-			return vowels[0]
-		elsif vowel == vowels[i]
-			return vowels[i+1]
-		end
-		i += 1
-	end
+    vowels = ["a", "e", "i", "o", "u"]
+    i = 0
+    # Get the next vowel and add an "edge case"
+    while i < vowels.length
+        if vowel == 'u'
+            return vowels[0]
+        elsif vowel == vowels[i]
+            return vowels[i+1]
+        end
+        i += 1
+    end
 end
 
 
 def alias_generator(name)
-	chars = name.chars
-	vowels = ["a", "e", "i", "o", "u"]
-	generated_name = []
-	# Loop through each word
+    chars = name.chars
+    vowels = ["a", "e", "i", "o", "u"]
+    generated_name = []
 
-	puts "The name should be an array: #{chars}"
+    # Loop through each word
+    # If it's a vowel get the next vowel
+    # If it's a consonant get the next consonant
 
-	chars.each do |letter|
-		if vowels.include? letter
-			generated_name << get_next_vowel(letter)
-		else
-			generated_name << letter.next
-		end
-	end
+    chars.each do |letter|
+        if vowels.include? letter
+            generated_name << get_next_vowel(letter)
+        else
+            generated_name << letter.next
+        end
+    end
 
-	puts "The generated name is #{generated_name.join('')}"
+    # Return the generated alias capitalized
+    return generated_name.join('').capitalize
 
 
 end
 
-alias_generator("Torres")
 
+# Driver code
+puts "Hi Welcome to the Alias Generator 3000(TM)"
 
-
-
-
-
-
-
-# Swap the first and last name
-# For each vowel inside of each name, swap it for the next vowel
+# Call the method that get's the name from the user
+get_name
