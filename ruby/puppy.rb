@@ -6,7 +6,7 @@
 # Guardian: true
 #
 # BEHAVIOR ---------------------------------
-# Friendly
-# Loyal
+# Play dead
+# Fetch
 # Eats without chewing
 
