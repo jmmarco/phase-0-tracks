@@ -59,3 +59,10 @@ end
 tigers = []
 50.times {tigers << Tiger.new}
 puts "We have #{tigers.length} tigers!"
+
+# Work with the tigers and make them do stuff
+tigers.each do |tiger|
+	tiger.jump
+	tiger.roar
+end
+
