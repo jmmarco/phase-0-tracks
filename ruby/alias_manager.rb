@@ -1,31 +1,23 @@
 # Grab an agent's name, split it into two words
 
 def alias_generator(name)
-	arr = name.split(' ')
+	chars = name.chars
 	vowels = ["a", "e", "i", "o", "u"]
 	generated_name = []
 	# Loop through each word
-	arr.each do |word|
-		# Split each word into letters
-		w = word.split('')
 
-		for letter in w
-			# For each letter do something
-			for vowel in vowels
-				if vowel == letter
-					puts "Found a vowel, and it is #{letter}"
-					puts "The next vowel for it is #{}"
-					generated_name << vowel.next
-				end
-			end
+	puts "The name should be an array: #{chars}"
+	count = chars.count do |char|
 
+		vowels.any? {|vowel| char == vowel}
 
-		end
 	end
-	p generated_name
+
+	puts count
 end
 
-alias_generator("Steve Marco")
+alias_generator("john")
+
 
 
 
