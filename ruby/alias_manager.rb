@@ -11,7 +11,7 @@ def get_name
             puts "Please enter a name:"
             name = gets.chomp
             puts "The name entered is #{name}"
-            puts "is that right? Enter 'ok' if satisfied"
+            puts "Is that right? Enter 'ok' if satisfied or press the 'enter' key to enter a new name."
             input = gets.chomp.downcase
         end
 
@@ -36,9 +36,13 @@ def get_name
         # Make the array a single string
         result = result.join(" ")
 
+        # Put each generated alias in the array
+        $aliases << result
+
         # Output to the user
         puts "Program complete! Here's your new name: #{result}"
-        puts "Do you wish to generate a new name? Enter 'done' if you're all set."
+        puts "Do you wish to generate a new name?"
+        puts "Enter 'done' if you're all set or hit the 'enter' key to generate another alias."
         input = gets.chomp
         break if input == 'done'
     end
@@ -87,5 +91,10 @@ end
 # Driver code
 puts "Hi Welcome to the Alias Generator 3000(TM)"
 
+# Create an global array to hold all the aliases generated
+$aliases = []
+
 # Call the method that get's the name from the user
 get_name
+
+puts "The aliases you generated are #{$aliases}"
