@@ -4,40 +4,44 @@
 # So the final output for "Felicia Torres" is actually: "Uussit Gimodoe"
 
 def get_name
-
 	# Get the name from the user and make sure it's OK
-	input = ""
-    until input == "done" do
-        puts "Please enter a name:"
-        name = gets.chomp
-        puts "The name entered is #{name}"
-        puts "is that right? Enter 'done' if satisfied"
-        input = gets.chomp.downcase
-    end
-
-    # Split the name into words
-    name = name.split(" ")
-    result = []
-
-    # If the name has more than one word
-    # Run the generator for each word
-    if name.length > 1
-        name.each do |piece|
-            result << alias_generator(piece)
+	loop do
+    	input = ""
+    	until input == "ok" do
+            puts "Please enter a name:"
+            name = gets.chomp
+            puts "The name entered is #{name}"
+            puts "is that right? Enter 'ok' if satisfied"
+            input = gets.chomp.downcase
         end
-   	# Run the generator on the single word
-    else
-        result << alias_generator(name[0])
+
+        # Split the name into words
+        name = name.split(" ")
+        result = []
+
+        # If the name has more than one word
+        # Run the generator for each word
+        if name.length > 1
+            name.each do |piece|
+                result << alias_generator(piece)
+            end
+            # Run the generator on the single word
+        else
+            result << alias_generator(name[0])
+        end
+
+        # Reverse (swap) the array
+        result = result.reverse
+
+        # Make the array a single string
+        result = result.join(" ")
+
+        # Output to the user
+        puts "Program complete! Here's your new name: #{result}"
+        puts "Do you wish to generate a new name? Enter 'done' if you're all set."
+        input = gets.chomp
+        break if input == 'done'
     end
-
-    # Reverse (swap) the array
-    result = result.reverse
-
-    # Make the array a single string
-    result = result.join(" ")
-
-    # Output to the user
-    puts "Program complete! Here's your new name: #{result}"
 end
 
 
