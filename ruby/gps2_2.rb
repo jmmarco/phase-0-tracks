@@ -21,6 +21,11 @@
 # steps: display item name and quantity
 # output: print a message to confirm and display updated cart
 
+# Method to check for valid quanities
+# input: enter valid whole number (integer)
+# steps: check if number is actually a number and a integer
+# output: print a message to confirm and display updated cart
+
 # Method to print a list and make it look pretty
 # input: shopping cart (hash)
 # steps: iterate through each item in hash and print the key and values
@@ -42,18 +47,22 @@ end
 # Method to add items
 def add_item(cart,item, quantity)
     cart[item] = quantity
+    puts "Ok, added #{quantity} #{item}(s)"
     cart
 end
 
 # Method to remove items
 def remove_item(cart, item)
     cart.delete(item)
+    puts "Ok, removed #{item}(s)"
     cart
 end
 
 # Method to update items
 def update_item(cart, item, quantity)
+    puts "cart is #{cart} and item is #{} and quantity is #{quantity}"
     cart[item] = quantity
+    puts "Ok, updated #{item} to #{quantity}"
     cart
 end
 
@@ -67,43 +76,60 @@ def check_quantity(quantity)
     quantity
 end
 
+# Method to display cart
+def display(cart)
+    puts "Here's your current shopping cart:"
+    cart.each do |item, quantity|
+        puts "#{quantity} #{item}"
+    end
+    p cart
+end
 
 # Driver code
 puts "Welcome to the shopping cart 2000(TM)"
 cart = {}
 
-
+# Present menu until user is done
 loop do
+	# Greet user and present available options
     puts "To get started, please enter some items to the cart using spaces"
-    options = ['add', 'remove', 'update', 'display']
+    options = ['add', 'remove', 'update', 'display', 'done']
     puts "Available options are: #{options}"
     input = gets.chomp.downcase
 
+    # Quit program
+    break if input == 'done'
+
+    # Do stuff based on input
     case input
     when "add"
         puts "Enter the item you wish to add:"
         item = gets.chomp
         puts "How many of #{item} do you want?"
-        check_quantity(gets.chomp)
-        puts "Ok, added #{quantity} #{item}"
+        quantity = gets.chomp
+        check_quantity(quantity)
+        add_item(cart, item, quantity)
+        display(cart)
     when "remove"
+        display(cart)
         puts "Enter the item you wish to remove:"
         item = gets.chomp
         remove_item(cart, item)
-        puts "Ok, removed #{item} from cart."
     when "update"
-        puts "Here's your current cart:"
-        cart.each do |item, quantity|
-            puts "#{quantity} #{item}"
-        end
-        puts "What item do you wish to udpate?"
-        input = gets.chomp
-        puts "Ok, now enter the new quantity"
-       	check_quantity(gets.chomp)
+        display(cart)
+        puts "What item do you wish to update?"
+        item = gets.chomp
+        puts "Ok, now enter the new quantity:"
+        quantity = gets.chomp
+        check_quantity(quantity)
         update_item(cart, item, quantity)
-        puts "Ok, I updadated to #{quantity} #{item}(s)"
+    when "display"
+        display(cart)
     else
         puts "Not a valid option. Try again."
     end
 
 end
+
+# Say bye!
+puts "Thanks for using the shoping cart 2000(TM)!"
