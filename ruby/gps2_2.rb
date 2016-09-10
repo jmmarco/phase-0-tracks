@@ -33,6 +33,7 @@ def shopping_cart(items)
 
 	array.each do |item|
 		cart[item] = 1
+		puts "Adding #{item}.. to the cart"
 	end
 	cart
 end
