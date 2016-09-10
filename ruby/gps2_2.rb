@@ -116,12 +116,14 @@ loop do
         puts "Enter the item you wish to remove:"
         item = gets.chomp
         remove_item(cart, item)
+        display(cart)
     when "update"
         display(cart)
         puts "What item do you wish to update?"
         item = gets.chomp
         quantity = check_quantity(item)
         update_item(cart, item, quantity)
+        display(cart)
     when "display"
         display(cart)
     else
