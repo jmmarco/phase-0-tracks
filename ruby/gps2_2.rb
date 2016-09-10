@@ -25,3 +25,16 @@
 # input: shopping cart (hash)
 # steps: iterate through each item in hash and print the key and values
 # output: print entire cart (hash)
+
+# Define the cart that accepts items as a parameter
+def shopping_cart(items)
+	cart = {}
+	array = items.split(" ")
+
+	array.each do |item|
+		cart[item] = 1
+	end
+	cart
+end
+
+puts shopping_cart("carrots apples cereal pizza")
