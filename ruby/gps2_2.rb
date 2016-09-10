@@ -39,13 +39,40 @@ def shopping_cart(items)
     cart
 end
 
+# Method to add items to the cart
+def add_item(cart,item, quantity)
+    cart[item] = quantity
+    puts "Here's your current cart #{cart}"
+    cart
+end
+
+
 # Driver code
 puts "Welcome to the shopping cart 2000(TM)"
 
 loop do
     puts "To get started, please enter some items to the cart using spaces"
-    puts "Like this: carrots tomatoes cereal - To exit type 'done'"
-    items = gets.chomp.downcase
-    break if items == 'done'
-    shopping_cart(items)
+    options = ['add', 'remove', 'update', 'display']
+    puts "Available options are: #{options}"
+    input = gets.chomp.downcase
+    cart = {}
+
+    case input
+    when "add"
+        puts "Enter the item you wish to add:"
+        item = gets.chomp
+        puts "How many of #{item} do you want?"
+        quantity = gets.chomp
+        begin
+            quantity = Integer(quantity)
+            add_item(cart,item, quantity)
+            puts "Ok, added #{quantity} #{item}"
+        rescue ArgumentError, TypeError
+            puts "Thats not a number. Try again."
+        end
+    else
+        puts "Not a valid option. Try again."
+    end
+
+
 end
