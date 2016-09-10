@@ -26,6 +26,11 @@
 # steps: check if number is actually a number and a integer
 # output: print a message to confirm and display updated cart
 
+# Method to check for valid items
+# input: enter valid item (string)
+# steps: check if item is a valid key in the current hash
+# output: print a message to confirm and display updated cart
+
 # Method to print a list and make it look pretty
 # input: shopping cart (hash)
 # steps: iterate through each item in hash and print the key and values
@@ -53,7 +58,7 @@ end
 # Method to remove items
 def remove_item(cart, item)
     cart.delete(item)
-    puts "Ok, removed #{item}(s)"
+    puts "Ok, removed #{item}"
     cart
 end
 
@@ -74,6 +79,16 @@ def check_quantity(item)
         puts "Thats not a number. Try again!"
     end
     quantity
+end
+
+def check_item(cart, item)
+    loop do
+        cart.key?(item) rescue false
+        break if cart.key?(item) == true
+        puts "That item doesn't exist! Enter a valid item."
+        item = gets.chomp
+    end
+    item
 end
 
 # Method to display cart
@@ -114,13 +129,13 @@ loop do
     when "remove"
         display(cart)
         puts "Enter the item you wish to remove:"
-        item = gets.chomp
+        item = check_item(cart, gets)
         remove_item(cart, item)
         display(cart)
     when "update"
         display(cart)
-        puts "What item do you wish to update?"
-        item = gets.chomp
+        puts "Enter the item you wish to update"
+        item = check_item(cart, gets)
         quantity = check_quantity(item)
         update_item(cart, item, quantity)
         display(cart)
