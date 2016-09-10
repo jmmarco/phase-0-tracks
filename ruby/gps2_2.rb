@@ -39,13 +39,18 @@ def shopping_cart(items)
     cart
 end
 
-# Method to add items to the cart
+# Method to add items
 def add_item(cart,item, quantity)
     cart[item] = quantity
     puts "Here's your current cart #{cart}"
     cart
 end
 
+# Method to remove items
+def remove_item(cart, item)
+	cart.delete(item)
+	cart
+end
 
 # Driver code
 puts "Welcome to the shopping cart 2000(TM)"
@@ -70,6 +75,10 @@ loop do
         rescue ArgumentError, TypeError
             puts "Thats not a number. Try again."
         end
+    when "remove"
+        puts "Enter the item you wish to remove:"
+        item = gets.chomp
+
     else
         puts "Not a valid option. Try again."
     end
