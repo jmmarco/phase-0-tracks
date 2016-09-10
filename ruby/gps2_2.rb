@@ -40,7 +40,6 @@ def shopping_cart(items)
         cart[item] = 1
         puts "Adding #{item}.. to the cart"
     end
-    puts "Here's your current cart #{cart}"
     cart
 end
 
@@ -60,18 +59,19 @@ end
 
 # Method to update items
 def update_item(cart, item, quantity)
-    puts "cart is #{cart} and item is #{} and quantity is #{quantity}"
     cart[item] = quantity
     puts "Ok, updated #{item} to #{quantity}"
     cart
 end
 
 # Method to check for valid quantities
-def check_quantity(quantity)
-    begin
-        quantity = Integer(quantity)
-    rescue ArgumentError, TypeError
-        puts "Thats not a number. Exiting to main menu.."
+def check_quantity(item)
+	quantity = ''
+    loop do
+    	puts "Ok, enter the new quantity for #{item}:"
+        quantity = Integer(gets) rescue false
+        break if quantity.is_a? Integer
+        puts "Thats not a number. Try again!"
     end
     quantity
 end
@@ -87,14 +87,17 @@ end
 
 # Driver code
 puts "Welcome to the shopping cart 2000(TM)"
-cart = {}
+puts "To get started, please enter some items to the cart using spaces"
+items = gets.chomp
+cart = shopping_cart(items)
+display(cart)
 
 # Present menu until user is done
 loop do
-	# Greet user and present available options
-    puts "To get started, please enter some items to the cart using spaces"
+    # Greet user and present available options
     options = ['add', 'remove', 'update', 'display', 'done']
     puts "Available options are: #{options}"
+
     input = gets.chomp.downcase
 
     # Quit program
@@ -105,9 +108,7 @@ loop do
     when "add"
         puts "Enter the item you wish to add:"
         item = gets.chomp
-        puts "How many of #{item} do you want?"
-        quantity = gets.chomp
-        check_quantity(quantity)
+        quantity = check_quantity(item)
         add_item(cart, item, quantity)
         display(cart)
     when "remove"
@@ -119,9 +120,7 @@ loop do
         display(cart)
         puts "What item do you wish to update?"
         item = gets.chomp
-        puts "Ok, now enter the new quantity:"
-        quantity = gets.chomp
-        check_quantity(quantity)
+        quantity = check_quantity(item)
         update_item(cart, item, quantity)
     when "display"
         display(cart)
