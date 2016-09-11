@@ -18,6 +18,32 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		puts "That was a good #{cookie}!"
 	end
+
+	# Getter methods (making private data available outside the class)
+	def name
+		@name
+	end
+
+	def gender
+		@gender
+	end
+
+	def ethnicity
+		@ethnicity
+	end
+
+	# Setter methods (make data writable)
+	def name=(new_name)
+		@name = new_name
+	end
+
+	def gender=(new_gender)
+		@gender = new_gender
+	end
+
+	def ethnicity=(new_ethnicity)
+		@ethnicity = new_ethnicity
+	end
 end
 
 # Driver code
@@ -39,6 +65,8 @@ loop do
 		puts "Enter an ethnicity for this santa:"
 		ethnicity = gets.chomp
 		santas << Santa.new(name, gender, ethnicity)
+	when "update"
+
 	else
 		puts "Thats not a valid option. Try again."
 	end
