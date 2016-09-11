@@ -1,11 +1,6 @@
 # Define Santa class
 class Santa
-	attr_reader :name, :gender, :ethnicity
-	# Read and write
 	attr_accessor :name, :gender, :ethnicity
-	# Write only
-	attr_writer :name
-
 	# But you usually use attr_accessor for both read and write
 
 	def initialize(name, gender, ethnicity)
