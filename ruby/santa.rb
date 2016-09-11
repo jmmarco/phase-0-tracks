@@ -1,5 +1,13 @@
 # Define Santa class
 class Santa
+	attr_reader :name, :gender, :ethnicity
+	# Read and write
+	attr_accessor :name, :gender, :ethnicity
+	# Write only
+	attr_writer :name
+
+	# But you usually use attr_accessor for both read and write
+
 	def initialize(name, gender, ethnicity)
 		puts "Initializing Santa instance ..."
 		@name = name
@@ -17,19 +25,6 @@ class Santa
 	# Have some milk and cookies
 	def eat_milk_and_cookies(cookie)
 		puts "That was a good #{cookie}!"
-	end
-
-	# Getter methods (making private data available outside the class)
-	def name
-		@name
-	end
-
-	def gender
-		@gender
-	end
-
-	def ethnicity
-		@ethnicity
 	end
 
 	# Setter methods (make data writable)
@@ -73,5 +68,6 @@ loop do
 end
 
 # Display info
-p santas
-santas[0].speak
+p santas[0].gender
+p santas[0].name
+p santas[0].ethnicity
