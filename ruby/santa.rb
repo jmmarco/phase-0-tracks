@@ -1,7 +1,9 @@
 # Define Santa class
 class Santa
-    attr_accessor :name, :gender, :ethnicity, :age
-    # But you usually use attr_accessor for both read and write
+    attr_reader :name, :gender, :ethnicity, :age
+
+    # You usually use attr_accessor for both read and write
+    attr_accessor :gender, :ethnicity, :age
 
     def initialize(gender, ethnicity)
         puts "Initializing Santa instance ..."
