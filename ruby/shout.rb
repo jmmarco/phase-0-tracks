@@ -8,3 +8,8 @@ module Shout
 		words + "!!!" + " :D"
 	end
 end
+
+# Driver code
+puts Shout.yell_angrily("what the hell")
+
+puts Shout.yelling_happily("I am Awesome")
