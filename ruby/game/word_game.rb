@@ -27,17 +27,29 @@ class WordGame
 	def check_letter(letter)
 		if @word_to_guess.include? letter
 			puts "You found: #{letter}!"
-			@guessed[@word_to_guess.index(letter)] = letter
+			@word_to_guess.length.times do |i|
+				if word_to_guess[i] == letter
+					@guessed[i] = letter
+					puts "Good guess!"
+				end
+			end
 		else
 			puts "Sorry, #{letter} is not part of the word."
 		end
+
 		@attempts -= 1
+		status(@word_to_guess, @guessed)
 		puts "You have #{@attempts} attempts remaining."
 	end
 
 	# Make the array look presentable
 	def make_nice(array)
-		array = array.join("")
+		array = array.join(" ")
+	end
+
+	def status(arr1, arr2)
+		arr1.sort == arr2.sort
+		@is_over = true
 	end
 end
 
@@ -53,15 +65,24 @@ word = gets.chomp
 
 game.prepare_word(word)
 
-loop do
+while game.attempts != 0
 	puts "User #2, please enter a letter:"
 	game.check_letter(gets.chomp)
 	output = game.guessed
 
 	pretty = game.make_nice(output)
 
-	puts "The output is an: #{output.class}"
-
-	puts "The guessed array is #{pretty}"
-	break if game.attempts == 0
+	puts "The guessed word is #{pretty}"
+	# Check if the word was guessed
+	if @is_over
+		"You won!!!"
+		break
+	end
 end
+
+
+if game.attempts == 0
+	puts "The word was: #{@word_to_guess}"
+	puts "Better luck next time!"
+end
+puts "Thanks for playing!"
