@@ -12,7 +12,7 @@ class WordGame
 		@is_over = false
 	end
 
-	# Method to check word
+	# Method to prepare word
 	def prepare_word(word)
 		@word_to_guess = word.chars
 		g = []
@@ -23,6 +23,7 @@ class WordGame
 		@attempts = word.length
 	end
 
+	# Method to check letter
 	def check_letter(letter)
 		if @word_to_guess.include? letter
 			puts "You found: #{letter}!"
@@ -34,8 +35,10 @@ class WordGame
 		puts "You have #{@attempts} attempts remaining."
 	end
 
-
-
+	# Make the array look presentable
+	def make_nice(array)
+		array = array.join("")
+	end
 end
 
 
@@ -50,15 +53,15 @@ word = gets.chomp
 
 game.prepare_word(word)
 
-
 loop do
-	puts "User #2, please enter a word to be guessed:"
+	puts "User #2, please enter a letter:"
 	game.check_letter(gets.chomp)
 	output = game.guessed
-	puts "The guessed array is #{output}"
+
+	pretty = game.make_nice(output)
+
+	puts "The output is an: #{output.class}"
+
+	puts "The guessed array is #{pretty}"
 	break if game.attempts == 0
 end
-
-
-
-
