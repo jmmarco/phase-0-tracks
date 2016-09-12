@@ -1,19 +1,16 @@
-# Bird Class
-class Bird
-	inlcude Flight
-end
-
-# Plane Class
-class Plane
-	include Flight
-end
-
 module Flight
 	def take_off(altitude)
 		puts "Taking off and ascending until reaching #{altitude} ..."
 	end
 end
 
+class Bird
+  include Flight
+end
+
+class Plane
+  include Flight
+end
 
 # Driver code
 bird = Bird.new
