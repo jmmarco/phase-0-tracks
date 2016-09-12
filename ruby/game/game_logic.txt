@@ -1,0 +1,9 @@
+Greet users: Welcome to word guessing game. This a two player game.
+Input: User 1, please enter a word to use in the game. Don't let the other user see it.
+Steps:
+ - Display the number of guesses (based on the length) of the word
+ - Display a random word for User 2 (as a hint) to get started
+ - If guess is not correct them display the number of remaining guesses
+ - If the player figures out the word then exit and display a message
+ - If a repeated guess is made, let the user know. Number of attempts remains unchanged
+ Output: Display the final word and the number of attempts used to figure it out.
