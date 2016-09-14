@@ -16,6 +16,8 @@ class VirusPredictor
     @population_density = population_density
   end
 
+
+
   # Calls the predicted_deaths and speed_of_spread methods (using required arguments for each) and prints as sentences
   def virus_effects
     predicted_deaths
@@ -23,6 +25,7 @@ class VirusPredictor
   end
 
   private
+  # All the methods below can be called only in the context of the object and are accessible from the outside (driver code)
 
   # Uses control flow to determine the number of deaths and prints that as a statement
   def predicted_deaths
@@ -72,8 +75,8 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-# alabama.virus_effects
+alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+alabama.virus_effects
 
 # jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
 # jersey.virus_effects
