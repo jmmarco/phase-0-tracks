@@ -31,19 +31,21 @@ class VirusPredictor
   def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      population_factor = 0.4
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      population_factor = 0.3
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      population_factor = 0.2
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      population_factor = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      population_factor = 0.05
     end
 
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+    # Calculate the number of death once, using the correct factor returned
+    number_of_deaths = (population_factor * @population).floor
 
+    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
   end
 
   # Uses formula to determine speed rate of the spread and prints statement
@@ -73,7 +75,7 @@ end
 #=======================================================================
 
 # DRIVER CODE
- # initialize VirusPredictor for each state
+# initialize VirusPredictor for each state
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
@@ -97,3 +99,12 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# Release 8: Reflect
+# On your own, add a commented reflection section to yourmy_solution.rb file. Answer the following questions in your reflection:
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# What does require_relative do? How is it different from require?
+# What are some ways to iterate through a hash?
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# What concept did you most solidify in this challenge?
