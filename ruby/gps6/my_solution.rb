@@ -1,7 +1,7 @@
 # Virus Predictor
 
 # I worked on this challenge [by myself, with: Tiffany Chiu and Juan Marco].
-# We spent [#] hours on this challenge.
+# We spent [1:50] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # Allows us to load a file which contents are required for our main program
