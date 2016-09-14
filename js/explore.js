@@ -1,7 +1,7 @@
 /*
 Create an empty array to store the revered string
-Loop through each character in the string starting from the end(be sure to substract one,
-javascript counts from zero). Push each string into the array. Output to the console and return the reversed string.
+Loop through each character in the string starting from the end(be sure to subtract one,
+Javascript counts from zero). Push each string into the array. Output to the console and return the reversed string.
 */
 
 function reverse(string) {
