@@ -52,19 +52,21 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
+
 
     if @population_density >= 200
-      speed += 0.5
+      spread = 0.5
     elsif @population_density >= 150
-      speed += 1
+      spread = 1
     elsif @population_density >= 100
-      speed += 1.5
+      spread = 1.5
     elsif @population_density >= 50
-      speed += 2
+      spread = 2
     else
-      speed += 2.5
+      spread = 2.5
     end
+
+    speed = spread
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
@@ -93,6 +95,7 @@ alabama.virus_effects
 # print full report
 
 STATE_DATA.each do |state, value|
+  puts "-" * 105
   VirusPredictor.new(state, value[:population_density], value[:population]).virus_effects
 end
 
@@ -102,9 +105,16 @@ end
 
 # Release 8: Reflect
 # On your own, add a commented reflection section to yourmy_solution.rb file. Answer the following questions in your reflection:
-
 # What are the differences between the two different hash syntaxes shown in the state_data file?
+  # The states are keys that are written as strings "Alabama", they could also be written as symbols like this: :Alabama
 # What does require_relative do? How is it different from require?
+  # It allows us to include (load) a related file so we can use it from our main program file. It differs from require in the way it works;
+  # require allows you load files from other folder locations (not relative to the path we're currently on).
 # What are some ways to iterate through a hash?
+  # The are many ways to accomplish this. Most notably the .each method along with a key, value parameters. Another way would be to
+  # use a while loop to access the hash key and values using an interator variable like 'i'.
 # When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # The parameters had the same  name as the instance variables used.
 # What concept did you most solidify in this challenge?
+  # Accessing key values of a hash that contained another hash. Using capital letters for constants and making areas of the code
+  # private.
