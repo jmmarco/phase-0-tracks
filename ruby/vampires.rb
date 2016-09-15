@@ -20,7 +20,7 @@ while employees > 0
   puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
   garlic_bread = gets.chomp.downcase
   puts "Would you like to enroll in the company's health insurance? (y/n)"
-  insurance = gets.chomp.donwcase
+  insurance = gets.chomp.downcase
 
   # Calculate real age
   real_age = current_year - year_of_birth
