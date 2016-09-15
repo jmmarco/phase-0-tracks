@@ -17,4 +17,10 @@ for (var i = 0; i < names.length; i++) {
   horses[names[i]] = colors[i];
 }
 
-console.log(horses);
+// Use for in loops to acces JS objects
+for (var key in horses) {
+  console.log("The name of the horse is: " + key + " and the color is: " + horses[key] );
+}
+
+// console.log(horses);
+
