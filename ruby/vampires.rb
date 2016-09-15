@@ -17,21 +17,21 @@ while employees > 0
   age = gets.to_i
   puts "What year were you born?"
   year_of_birth = gets.to_i
-  puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-  garlic_bread = gets.chomp.capitalize
-  puts "Would you like to enroll in the company's health insurance?"
-  insurance = gets.chomp.capitalize
+  puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
+  garlic_bread = gets.chomp.downcase
+  puts "Would you like to enroll in the company's health insurance? (y/n)"
+  insurance = gets.chomp.donwcase
 
   # Calculate real age
   real_age = current_year - year_of_birth
 
 
   # Detection Logic
-  if real_age == age && garlic_bread == "Y"
+  if real_age == age && garlic_bread == "y"
     result = "Probably not a vampire."
-  elsif real_age != age && garlic_bread == "N"
+  elsif real_age != age && garlic_bread == "n"
     result = "Probably a vampire."
-  elsif real_age != age && garlic_bread == "N" && insurance == "N"
+  elsif real_age != age && garlic_bread == "n" || insurance == "n"
     result = "Almost certainly a vampire."
   elsif name == "Drake Cula" || name == "Tu Fang"
     result = "Definitely a vampire."
@@ -46,7 +46,7 @@ while employees > 0
   allergies = Array.new
 
   while allergy != "done"
-    allergy = gets.chomp
+    allergy = gets.chomp.downcase
 
     if allergy != "done" && allergy != "sunshine"
       allergies << allergy
