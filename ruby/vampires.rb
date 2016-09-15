@@ -27,16 +27,14 @@ while employees > 0
 
 
   # Detection Logic
-  if real_age == age && garlic_bread == "y"
-    result = "Probably not a vampire."
-  elsif real_age != age && garlic_bread == "n"
-    result = "Probably a vampire."
-  elsif real_age != age && garlic_bread == "n" || insurance == "n"
-    result = "Almost certainly a vampire."
+  if real_age == age && (garlic_bread == "y" || insurance == "y")
+    puts "Probably not a vampire."
+  elsif real_age != age && (garlic_bread == "n" && insurance == "n")
+    puts "Almost certainly a vampire."
+  elsif real_age != age && (garlic_bread == "n" || insurance == "n")
+    puts "Probably a vampire."
   elsif name == "Drake Cula" || name == "Tu Fang"
-    result = "Definitely a vampire."
-  else
-    result = "Results inconclusive."
+    puts "Definitely a vampire."
   end
 
   # Check for allergies
