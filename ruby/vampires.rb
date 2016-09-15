@@ -29,9 +29,9 @@ while employees > 0
   # Detection Logic
   if real_age == age && garlic_bread == "Y"
     result = "Probably not a vampire."
-  elsif (current_year - year_of_birth) != age && garlic_bread == "N"
+  elsif real_age != age && garlic_bread == "N"
     result = "Probably a vampire."
-  elsif (current_year - year_of_birth) != age && garlic_bread == "N" && insurance == "N"
+  elsif real_age != age && garlic_bread == "N" && insurance == "N"
     result = "Almost certainly a vampire."
   elsif name == "Drake Cula" || name == "Tu Fang"
     result = "Definitely a vampire."
