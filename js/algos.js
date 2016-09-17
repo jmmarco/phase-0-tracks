@@ -95,3 +95,9 @@ function generateRandomTestData(length) {
   }
   return result;
 }
+
+// Driver code
+a = generateRandomTestData(3);
+b = generateRandomTestData(5);
+console.log("The final array is:", a);
+console.log("The final array is:", b);
