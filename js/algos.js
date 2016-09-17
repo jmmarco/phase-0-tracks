@@ -50,3 +50,11 @@ function compareKeyValue(obj1, obj2) {
   // If we got to this point, then no key-values pairs matched
   return false;
 }
+
+// Driver code
+a = compareKeyValue({ name: "Steven", age: 54 }, { name: "Tamir", age: 54 });
+b = compareKeyValue({ type: "Car", engine: "diesel" }, { type: "Car", engine: "petrol" });
+
+console.log("a is:", a);
+console.log("b is:", b);
+console.log("b is:", c);
