@@ -13,21 +13,29 @@ Release 0: Find the Longest Phrase
 
 function longestPhrase(phrases) {
 
-  var longestSoFar = 0, result;
+    var longestSoFar = 0,
+        result;
 
-  phrases.forEach(function(phrase) {
-    if (phrase.length > longestSoFar) {
-      longestSoFar = phrase.length;
-      result = phrase;
-    }
+    phrases.forEach(function(phrase) {
+        if (phrase.length > longestSoFar) {
+            longestSoFar = phrase.length;
+            result = phrase;
+        }
 
-  });
+    });
 
-  console.log("The longest phrase is:", result);
-  console.log("And it contains a total of: " + result.length + " characters!");
-  return result;
+    console.log("The longest phrase is:", result);
+    console.log("And it contains a total of: " + result.length + " characters!");
+    return result;
 }
 
 // Driver code
-longestPhrase(["long phrase","longest phrase","longer phrase"]);
-longestPhrase(["Flux Capacitor", "DeLorean", "Marty Mc Fly", "Mr. Fusion", "Dr. Emmett Brown"]);
+// longestPhrase(["long phrase","longest phrase","longer phrase"]);
+// longestPhrase(["Flux Capacitor", "DeLorean", "Marty Mc Fly", "Mr. Fusion", "Dr. Emmett Brown"]);
+
+/*
+Release 1: Find a Key-Value Match
+- Grab two objects
+- Loop through each key pair of the first object
+  - if the key matches any of the keys in the second object, return true, otherwise return false
+*/
