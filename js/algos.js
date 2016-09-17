@@ -59,6 +59,14 @@ function compareKeyValue(obj1, obj2) {
 
 /*
 Release 2: Generate Random Test Data
-Take an integer to calculate the length and build an array of strings of the given length.
-Generate random words of varying length with a minimum of 1 letter and a maximum of 10 letters.
+Take an integer to calculate the length and build an array of the given length.
+Create an alphabet variable to hold all characters of the alphabet
+Create helper variables to hold a random number and a randomly generated word
+Iterate through the given array:
+  - Generate a random number and store it
+  - Empty the word variable
+  - While the length of the word is less than the randomly generated number:
+    - Save each character to the word variable
+  - Save the generated word to the current position
+Return the result
 */
