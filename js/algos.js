@@ -24,8 +24,10 @@ function longestPhrase(phrases) {
   });
 
   console.log("The longest phrase is:", result);
+  console.log("And it contains a total of: " + result.length + " characters!");
   return result;
 }
 
-
+// Driver code
 longestPhrase(["long phrase","longest phrase","longer phrase"]);
+longestPhrase(["Flux Capacitor", "DeLorean", "Marty Mc Fly", "Mr. Fusion", "Dr. Emmett Brown"]);
