@@ -70,3 +70,28 @@ Iterate through the given array:
   - Save the generated word to the current position
 Return the result
 */
+
+function generateRandomTestData(length) {
+  // Store all the letters of the alphabet
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  // Initialize an empty array of the provided length
+  var result = new Array(length);
+  // A place to put a random number and a word;
+  var randomNumber, word;
+
+  // Iterate over each position in the array
+  for (var i = 0; i < result.length; i++) {
+    // Generate a random number
+    randomNumber = Math.floor(Math.random() * 10) + 1;
+    // empty the word placeholder
+    word = "";
+    // Given the length of the random number
+    while (word.length < randomNumber) {
+      // Generate a random charcter from the alphabet and save it
+      word += alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+    // Save the generated word to the array
+    result[i] = word;
+  }
+  return result;
+}
