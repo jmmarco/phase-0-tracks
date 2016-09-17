@@ -36,6 +36,17 @@ function longestPhrase(phrases) {
 /*
 Release 1: Find a Key-Value Match
 - Grab two objects
-- Loop through each key pair of the first object
-  - if the key matches any of the keys in the second object, return true, otherwise return false
+- Loop through each key and value of the first object
+  - if the key and value match any of the keys and values in the second object, return true, otherwise return false
 */
+
+function compareKeyValue(obj1, obj2) {
+  // for..in loops are a great way to iterate through objects in JS
+  for (var key in obj1) {
+    // Check if the key-value pair of the first object mataches the one on the second object
+    if ((key in obj2) && (obj1[key] == obj2[key]))
+      return true;
+  }
+  // If we got to this point, then no key-values pairs matched
+  return false;
+}
