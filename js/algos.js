@@ -9,15 +9,14 @@ Release 0: Find the Longest Phrase
 - Return the result variable
 */
 
-// Program Logic
-
+// Program logic
 function longestPhrase(phrases) {
 
   var longestSoFar = 0,
     result;
 
   phrases.forEach(function(phrase) {
-    if (phrase.length > longestSozFar) {
+    if (phrase.length > longestSoFar) {
       longestSoFar = phrase.length;
       result = phrase;
     }
@@ -30,8 +29,8 @@ function longestPhrase(phrases) {
 }
 
 // Driver code
-// longestPhrase(["long phrase","longest phrase","longer phrase"]);
-// longestPhrase(["Flux Capacitor", "DeLorean", "Marty Mc Fly", "Mr. Fusion", "Dr. Emmett Brown"]);
+longestPhrase(["long phrase","longest phrase","longer phrase"]);
+longestPhrase(["Flux Capacitor", "DeLorean", "Marty Mc Fly", "Mr. Fusion", "Dr. Emmett Brown"]);
 
 /*
 Release 1: Find a Key-Value Match
@@ -40,6 +39,7 @@ Release 1: Find a Key-Value Match
   - if the key and value match any of the keys and values in the second object, return true, otherwise return false
   */
 
+// Program logic
 function compareKeyValue(obj1, obj2) {
   // for..in loops are a great way to iterate through objects in JS
   for (var key in obj1) {
@@ -52,10 +52,10 @@ function compareKeyValue(obj1, obj2) {
 }
 
 // Driver code
-// a = compareKeyValue({ name: "Steven", age: 54 }, { name: "Tamir", age: 54 });
-// b = compareKeyValue({ type: "Car", engine: "diesel" }, { type: "Car", engine: "petrol" });
-// console.log("a is:", a);
-// console.log("b is:", b);
+a = compareKeyValue({ name: "Steven", age: 54 }, { name: "Tamir", age: 54 });
+b = compareKeyValue({ type: "Car", engine: "diesel" }, { type: "Car", engine: "petrol" });
+console.log("a is:", a);
+console.log("b is:", b);
 
 /*
 Release 2: Generate Random Test Data
@@ -71,6 +71,7 @@ Iterate through the given array:
 Return the result
 */
 
+// Program logic
 function generateRandomTestData(length) {
   // Store all the letters of the alphabet
   var alphabet = "abcdefghijklmnopqrstuvwxyz";
