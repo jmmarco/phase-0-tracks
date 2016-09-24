@@ -1,0 +1,49 @@
+>>Display the information in one table<<
+
+sqlite> SELECT * FROM vehicles;
+1|Tesla|Model S|1
+2|Nissan|Leaf|2
+3|Chevrolet|Bolt|3
+4|Ford|Focus Electric|2
+
+>>Update an item that meets some condition<<
+
+sqlite> UPDATE vehicles
+   ...> SET model = "Focus BEV"
+   ...> WHERE ID = 4
+   ...> ;
+
+sqlite> SELECT * FROM vehicles;
+1|Tesla|Model S|1
+2|Nissan|Leaf|2
+3|Chevrolet|Bolt|3
+4|Ford|Focus BEV|2
+
+Tip: A "Focus Electric" is also known as "Battery Electric Vehicle"
+
+>>Display the information in both tables using one query<<
+
+sqlite> SELECT * FROM vehicles, types WHERE vehicles.type_id = types.id;
+1|Tesla|Model S|1|1|Full Size Luxury
+2|Nissan|Leaf|2|2|Compact
+3|Chevrolet|Bolt|3|3|Subcompact
+4|Ford|Focus BEV|2|2|Compact
+
+>>Display a narrower selection of columns from both tables using one queryDisplay a narrower selection of columns from both tables using one query<<
+
+sqlite>  SELECT vehicles.brand, vehicles.model, types.type FROM vehicles JOIN types ON vehicles.type_id = types.id;
+Tesla|Model S|Full Size Luxury
+Nissan|Leaf|Compact
+Chevrolet|Bolt|Subcompact
+Ford|Focus BEV|Compact
+sqlite>
+
+>>Delete an item that meets some condition<<
+
+sqlite> DELETE FROM vehicles
+   ...> WHERE model = "Bolt";
+sqlite> SELECT * FROM vehicles;
+1|Tesla|Model S|1
+2|Nissan|Leaf|2
+4|Ford|Focus BEV|2
+sqlite>
