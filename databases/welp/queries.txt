@@ -1,0 +1,36 @@
+>>You've joined two tables before. How do you join three?<<
+
+sqlite> select distinct users.id, users.first_name, users.last_name, reviews.id, reviews.stars, reviews.comment,
+   ...> reviews.business_id, reviews.user_id, businesses.id, businesses.name
+   ...> from reviews
+   ...> join users on reviews.user_id = users.id
+   ...> join businesses on reviews.business_id = businesses.id;
+1|Peter|Griffin||4|Good beer|7|1|7|The Drunken Clam
+5|Joe|Swanson||5|Best Pawtucket ale!|7|5|7|The Drunken Clam
+3|Adam|West||1|Bad hot dogs|6|3|6|Kwik-E-Mart
+2|Stewie|Griffin||5|Best ribs ever!|5|2|5|Franklin's BBQ
+4|Tom|Tucker||4|Amazing Noodles!|1|4|1|Awesome Noodles
+sqlite>
+
+>>There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.<<
+
+sqlite> select distinct users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+   ...> from reviews
+   ...> JOIN users on reviews.user_id = users.id
+   ...> join businesses on reviews.business_id = businesses.id;
+Peter|Griffin|The Drunken Clam|4|Good beer
+Joe|Swanson|The Drunken Clam|5|Best Pawtucket ale!
+Adam|West|Kwik-E-Mart|1|Bad hot dogs
+Stewie|Griffin|Franklin's BBQ|5|Best ribs ever!
+Tom|Tucker|Awesome Noodles|4|Amazing Noodles!
+
+>>How do you view the data of all three tables for just one particular business?<<
+
+sqlite> select distinct users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+   ...> from reviews
+   ...> join users on reviews.user_id = users.id
+   ...> join businesses on reviews.business_id = businesses.id
+   ...> where businesses.id = 7;
+Peter|Griffin|The Drunken Clam|4|Good beer
+Joe|Swanson|The Drunken Clam|5|Best Pawtucket ale!
+sqlite>
