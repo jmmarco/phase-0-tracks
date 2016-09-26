@@ -3,9 +3,11 @@
 # Talk about Object Relational Mapping (ORM)
 
 # Require gems
+require 'sqlite3'
+require 'faker'
 
 # Create SQLite3 database
-
+db = SQLite3::Database.new("kittens.db")
 # Learn about fancy string delimeters
 
 # create kittens table (if it's not there already)
