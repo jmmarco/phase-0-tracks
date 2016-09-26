@@ -28,3 +28,14 @@ end
 def remove_entry(db, target_id)
   db.execute("DELETE FROM todo WHERE id = ?", [target_id])
 end
+
+## UI METHODS ##
+
+def show_items(db)
+  # Generate a fresh select from table
+  list = db.execute("SELECT * FROM todo")
+  # Iterate through each item
+  list.each do |id, item, date|
+    puts "You added: #{item} on #{date}. This item has an id of: #{id}"
+  end
+end
