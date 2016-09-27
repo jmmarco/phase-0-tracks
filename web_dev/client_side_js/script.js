@@ -11,7 +11,7 @@ container.style.border = "10px solid purple";
 var ourCollection = document.getElementsByTagName("div");
 
 for (var i = 0; i < ourCollection.length; i++) {
-  console.log(ourCollection[i]);
+  // console.log(ourCollection[i]);
   ourCollection[i].style.border = "10px solid blue";
 }
 
@@ -21,3 +21,13 @@ newDiv.appendChild(divContent);
 
 var currentDiv = document.getElementById("cont");
 document.body.insertBefore(newDiv, currentDiv);
+
+// Add event listener
+
+function changeToRed(event) {
+  console.log("Image was clicked!!!");
+  console.log(event);
+  photo.style.border = "5px solid red";
+}
+
+photo.addEventListener("click", changeToRed);
