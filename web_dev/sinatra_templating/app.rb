@@ -25,3 +25,13 @@ post '/students' do
 end
 
 # add static resources
+
+get '/campus' do
+  erb :campus
+end
+
+post '/campus' do
+    @campus = params[:location]
+    #@classmates = db.execute("SELECT * FROM students WHERE campus=?", params[])
+    "Hello world #{@campus}"
+end
