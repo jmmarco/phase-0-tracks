@@ -61,10 +61,22 @@ get '/great_job/' do
   end
 end
 
-# Method to sum two numbers
+# Method to add two numbers
 get '/:num1/add/:num2' do
   num1 = params[:num1].to_i
   num2 = params[:num2].to_i
   result = num1 + num2
   "#{num1} + #{num2} = #{result}"
 end
+
+# Method to search db in some way
+get '/campus/:location' do
+  cohort = db.execute("SELECT * FROM students WHERE campus=?", [params[:location]] )
+  result = ''
+  cohort.each do |student|
+    result << "Name: #{student['name']}<br>"
+    result << "Age: #{student['age']}<br>"
+    result << "Campus: #{student['campus']}<br><br>"
+  end
+  result
+ end
