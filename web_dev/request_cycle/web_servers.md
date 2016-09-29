@@ -12,3 +12,18 @@ A VPS is virtual machine that runs an operating system and is typically sold as 
 
 - Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
 Running programs as root can lead to unexpected results and could sometimes (depending on the program) modify or damage areas of the OS without confirmation. For example running "rm -rf" as root can recursively and forcefully remove a directory in a blink of an eye with no confirmation whatsoever.
+
+
+Use dev tools to explore the DOM properties of an HTML element: Explored a banner from the devbootcamp.com website:
+
+Some properties found:
+- innerHTML
+- innerText
+- onclick
+- onfocus
+- className
+- id
+- tagName
+- parentElement
+- onsubmit
+- scrollHeight
