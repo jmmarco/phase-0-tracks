@@ -80,3 +80,15 @@ get '/campus/:location' do
   end
   result
  end
+
+ # Release 1: Research on your own
+
+ # Is Sinatra the only web app library in Ruby? What are some others?
+ # Sinatra is not the only web app library, there are others such as: Ruby on Rails, Camping, Merb and Nitro among others.
+
+ # Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+ # Other options for using a db with Sinatra are PostgreSQl and MongoDB.
+
+ # What is meant by the term web stack?
+ # The term web stack refers to a collection of software that is used for web developement. For example, to run a web application
+ # you need a web server, you also need an os, an frawework to develop an app, a database to hold persistent data, etc.
