@@ -50,3 +50,13 @@ get '/contact/:address' do
   address = params[:address]
   "The address is: #{address}"
 end
+
+# Add a attaboy method using query parameters
+get '/great_job/' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
