@@ -44,3 +44,51 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+# Add a contact route
+get '/contact/:address' do
+  address = params[:address]
+  "The address is: #{address}"
+end
+
+# Add a attaboy method using query parameters
+get '/great_job/' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+# Method to add two numbers
+get '/:num1/add/:num2' do
+  num1 = params[:num1].to_i
+  num2 = params[:num2].to_i
+  result = num1 + num2
+  "#{num1} + #{num2} = #{result}"
+end
+
+# Method to search db in some way
+get '/campus/:location' do
+  cohort = db.execute("SELECT * FROM students WHERE campus=?", [params[:location]] )
+  result = ''
+  cohort.each do |student|
+    result << "Name: #{student['name']}<br>"
+    result << "Age: #{student['age']}<br>"
+    result << "Campus: #{student['campus']}<br><br>"
+  end
+  result
+ end
+
+ # Release 1: Research on your own
+
+ # Is Sinatra the only web app library in Ruby? What are some others?
+ # Sinatra is not the only web app library, there are others such as: Ruby on Rails, Camping, Merb and Nitro among others.
+
+ # Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+ # Other options for using a db with Sinatra are PostgreSQl and MongoDB.
+
+ # What is meant by the term web stack?
+ # The term web stack refers to a collection of software that is used for web developement. For example, to run a web application
+ # you need a web server, you also need an os, an frawework to develop an app, a database to hold persistent data, etc.
