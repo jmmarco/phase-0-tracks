@@ -1,9 +1,9 @@
 # Students: Bex Finken, Juan Marco
 
 def favorite_food
-	puts "Spaghetti"
-	puts "Tacos"
-	yield("Bex", "Juan")
+  puts "Spaghetti"
+  puts "Tacos"
+  yield("Bex", "Juan")
 
 end
 
@@ -19,21 +19,21 @@ numbers = [1, 2, 4, 7, 12, 50, 87, 99]
 
 # A hash for pets
 pets = {
-	"cat" => 1,
-	"dog" => 2,
-	"fish" => 7,
-	"wolf" => 1,
-	"tiger" => 3
+  "cat" => 1,
+  "dog" => 2,
+  "fish" => 7,
+  "wolf" => 1,
+  "tiger" => 3
 }
 
 # Release 1: Use .each, .map, and .map!
 
 numbers.each do |num|
-	puts "This is number: #{num}"
+  puts "This is number: #{num}"
 end
 
 pets.each do |pet, quantity|
-	puts "We have: #{quantity} #{pet}(s)."
+  puts "We have: #{quantity} #{pet}(s)."
 end
 
 
@@ -43,7 +43,7 @@ puts "Before .map!: #{numbers}"
 
 # Iterate through each number and get the next one
 numbers.map! do |num|
-	num.next
+  num.next
 end
 
 puts "After .map! #{numbers}"
