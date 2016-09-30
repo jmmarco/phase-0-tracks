@@ -25,3 +25,17 @@ post '/students' do
 end
 
 # add static resources
+
+get '/campus' do
+  erb :campus
+end
+
+post '/campus' do
+    students = db.execute("SELECT * FROM students WHERE campus=?", params[:location])
+    results = ""
+    students.each do |student|
+      results << "Name: #{student['name']}<br>"
+      results << "Age: #{student['age']}<br>"
+    end
+    results
+end
