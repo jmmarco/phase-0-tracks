@@ -13,3 +13,22 @@ $( document ).ready(function() {
 Spend 10 minutes looking at the jQuery documentation to figure out how to achieve the same results as using JavaScript by writing less code.
 
 ### Selecting Elements
+
+To select HTML elements, we simply include the `$('target_element') to select an element.
+For example to select all the `<div>` in an HTML document we would write: `$('div')`, if we would want to target a class we would have to use the `.` and the class name: `$('.class_name'), and for ID's we use the `#`: $('#target_id')
+
+### Adding methods to selected elements
+
+jQuery allows us to attach actions or methods to our selection by adding a period right next to the selected element. Like this:
+```
+$('p').append('some extra text to append')
+```
+
+We could also add event listeners to perform certain actions. Like do something with a particular element is clicked. Like this:
+```
+$(document).ready(function() {
+  $("p").click(function(event) {
+  alert("Thanks for visiting!");
+  });
+});
+```
