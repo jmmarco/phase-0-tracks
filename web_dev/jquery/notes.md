@@ -32,3 +32,8 @@ $(document).ready(function() {
   });
 });
 ```
+
+### Resources
+- [Difference between .on('click') vs .click()](http://stackoverflow.com/questions/9122078/difference-between-onclick-vs-click)
+- [jquery select option click handler](http://stackoverflow.com/questions/5749597/jquery-select-option-click-handler)
+- [How do I get the text value of a selected option?](https://learn.jquery.com/using-jquery-core/faq/how-do-i-get-the-text-value-of-a-selected-option/)
